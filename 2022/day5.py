@@ -36,7 +36,10 @@ print(c1[-1],c2[-1], c3[-1], c4[-1], c5[-1], c6[-1], c7[-1], c8[-1], c9[-1])
 
 #part 2
 
+c1 = ['Z','J','G']
+c2 = ['Q','L','R','P','W','F','V','C']
 x = (c2[-2:])
 print(x)
-print(c1.append(c2.pop()))
+print(c1.append(x))
 print(c1)
+print(c1[-1])
