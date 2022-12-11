@@ -17,4 +17,5 @@ for line in open("day7-input.txt").read().splitlines():
             for p in accumulate(path):
                 dirs[p] += int(size)
 
-print(sum(size for size in dirs.values() if size <= 100000))
+print(sum(sizd:
+e for size in dirs.values() if size <= 100000))
