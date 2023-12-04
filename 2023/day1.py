@@ -32,3 +32,14 @@ print(total1)
 print(total2)
 
 
+with open('day1-test.txt') as f:
+    lines = f.read().splitlines()
+
+t = 0
+for line in lines:
+    digits2 = [char for char in translate(line) if char.isnumeric()]
+    print(digits2)
+    t += int(digits2[0]+digits2[-1])
+
+print(t)
+
