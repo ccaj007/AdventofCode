@@ -1,45 +1,35 @@
-#import re
-digit_names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-
-with open ('day1.txt') as f:
-    data = f.read().splitlines()
-
-total1 = 0
-total2 = 0
-
-def translate(line):
-    for num, name in enumerate(digit_names):
-        line = line.replace(name, f"{name}{num}{name}")
-    return line
-
-# for i in data:
-#     nums = re.findall(r'\d', i)    
-#     combine = int(nums[0] + nums[-1])
-#     total += combine
-
-for line in data:
-    # digits = []
-    # for char in line:
-    #     if char.isnumeric():
-    #         digits.append(char)
-    digits = [char for char in line if char.isnumeric()]
-    total1 += int(digits[0]+digits[-1])
-
-    digits2 = [char for char in translate(line) if char.isnumeric()]
-    total2 += int(digits2[0] + digits[-1])
-    
-print(total1)
-print(total2)
-
-
-with open('day1-test.txt') as f:
+#with open("day1-test.txt") as f:
+with open("day1.txt") as f:
     lines = f.read().splitlines()
 
-t = 0
-for line in lines:
-    digits2 = [char for char in translate(line) if char.isnumeric()]
-    print(digits2)
-    t += int(digits2[0]+digits2[-1])
+nums = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+p1 = p2 = 0
 
-print(t)
+def translate(value):
+    for num, name in enumerate(nums):
+        value = value.replace(name, f"{name}{num}{name}")
+    return value
+
+# for s in lines:
+#     good = []
+#     for i in s:
+#         if i.isnumeric():
+#             good.append(i)
+#     p1 += (int(good[0]+good[-1]))
+
+# for s in lines:
+#     good = []
+#     new = translate(s)
+#     for i in new:
+#         if i.isnumeric():
+#             good.append(i)
+#     p2 += (int(good[0]+good[-1]))        
+
+for s in lines:
+    good = [i for i in s if i.isnumeric()]
+    p1 += (int(good[0]+good[-1]))
+    good2 = [i for i in translate(s) if i.isnumeric()]
+    p2 += (int(good2[0]+good2[-1]))
+print(p1)
+print(p2)
 
