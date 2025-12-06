@@ -1,7 +1,7 @@
 from collections import Counter
 
-with open("day7-test.txt") as f:
-#with open("day7.txt") as f:
+#with open("day7-test.txt") as f:
+with open("day7.txt") as f:
     lines = f.read().splitlines()
 
 def translate(c, part1 = True):
@@ -68,9 +68,4 @@ a = solve(lines, True)
 b = solve(lines, False)
 print(a)
 print(b)
-
-# s = "32T3K 765"
-# test = Hand(s)
-# print(test)
-
 
