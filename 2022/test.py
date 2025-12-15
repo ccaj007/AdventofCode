@@ -1,8 +1,6 @@
-# with open("day2-input.txt") as f:
-#     rounds = f.read().splitlines()
-rounds = open(0).read().splitlines()
+lines = open(0).read().splitlines()
+scores = {'A':1, 'B':2, 'C':3, 'X':1, 'Y':2, 'Z':3}
 
-# part 1
 points = {
     "A X": 4,
     "A Y": 8,
@@ -14,10 +12,10 @@ points = {
     "C Y": 2,
     "C Z": 6,
 }
-print(f"My score is {sum([points[round] for round in rounds])}.")
 
+total = 0
+print(sum([points[line] for line in lines]))
 
-# part 2
 points = {
     "A X": 0 + 3,
     "A Y": 3 + 1,
@@ -29,5 +27,5 @@ points = {
     "C Y": 3 + 3,
     "C Z": 6 + 1,
 }
-scores = [points[round] for round in rounds]
-print(f"My score is {sum([points[round] for round in rounds])}.")
+
+print(sum([points[line] for line in lines]))
